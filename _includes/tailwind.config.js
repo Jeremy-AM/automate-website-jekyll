@@ -40,7 +40,7 @@ module.exports = {
         'green': '2px 2px 0px #71CDA9',
       },
       screens: {
-        'xxl': '1440px'
+        'xxl': '1920px'
       }
     },
   },
