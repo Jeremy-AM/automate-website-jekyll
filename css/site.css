@@ -77,7 +77,7 @@ p {
   background-image: url('/assets/img/bg-9.svg');
   background-position: left;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .horizontal-center {
