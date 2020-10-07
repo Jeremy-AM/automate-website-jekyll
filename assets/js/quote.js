@@ -11,10 +11,11 @@ ctas.forEach(cta => {
     ctaBack.addEventListener('click', function(event) {
       solution.classList.add('hidden');
       problem.classList.remove('hidden');
+      
+    mixpanel.track("Solutions");
     });
   });
 })
-
 
 const hiddenQuotes = document.querySelectorAll('.hidden-mobile');
 const moreButton = document.querySelector('#more-button');
