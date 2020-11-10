@@ -52,6 +52,7 @@ layout: default
             <input type="url" class="form-control" id="url10" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" data-error="Please provide a valid Amazon URL" required>
             <div class="help-block with-errors"></div>
           </div>
+          <input type="hidden" id="userID" data-ms-member="id">
           <button type="submit" class="btn btn-default action-btn" id="btn">Tracker ces produits</button>
         </form>
       </div>
@@ -87,7 +88,8 @@ $(document).ready(function() {
             url7 : $('#url7').val(),
             url8 : $('#url8').val(),
             url9 : $('#url9').val(),
-            url10 : $('#url10').val()
+            url10 : $('#url10').val(),
+            userID : $('#userID').val()
         },
         success:function (data) {
             console.log(data);
