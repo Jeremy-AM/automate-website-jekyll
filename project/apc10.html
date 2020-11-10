@@ -11,7 +11,7 @@ layout: default
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
           Saisissez les 10 URLs des 10 produits que vous souhaitez surveiller sur Amazon
         </p>
-        <form role="form" method="POST" data-toggle="validator">
+        <form role="form" data-toggle="validator">
           <div class="form-group">
             <input type="url" class="form-control" id="url1" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Votre URL doit commencer par https://www.amazon.fr/" required>
             <div class="help-block with-errors"></div>
@@ -72,33 +72,21 @@ layout: default
 </footer>
 
 <script>
-var url1 = document.getElementById('url1').value;
-var url2 = document.getElementById('url2').value;
-var url3 = document.getElementById('url3').value;
-var url4 = document.getElementById('url4').value;
-var url5 = document.getElementById('url5').value;
-var url6 = document.getElementById('url6').value;
-var url7 = document.getElementById('url7').value;
-var url8 = document.getElementById('url8').value;
-var url9 = document.getElementById('url9').value;
-var url10 = document.getElementById('url10').value;
-    
-var data = {
-            url1 : url1,
-            url2 : url2,
-            url3 : url3,
-            url4 : url4,
-            url5 : url5,
-            url6 : url6,
-            url7 : url7,
-            url8 : url8,
-            url9 : url9,
-            url10 : url10
-        };
 $.ajax({
         type : 'POST',
         url : 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws',  
-        data: data,
+        data: {
+            url1 : $('#url1').val(),
+            url2 : $('#url2').val(),
+            url3 : $('#url3').val(),
+            url4 : $('#url4').val(),
+            url5 : $('#url5').val(),
+            url6 : $('#url6').val(),
+            url7 : $('#url7').val(),
+            url8 : $('#url8').val(),
+            url9 : $('#url9').val(),
+            url10 : $('#url10').val()
+        },
         success:function (data) {
             console.log(data);
         },
