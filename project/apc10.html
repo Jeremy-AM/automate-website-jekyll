@@ -73,21 +73,21 @@ layout: default
 
 <script>
 var data = {
-            url1 : $('#url1').val(),
-            url2 : $('#url2').val(),
-            url3 : $('url3').val(),
-            url4 : $('url4').val(),
-            url5 : $('url5').val(),
-            url6 : $('url6').val(),
-            url7 : $('url7').val(),
-            url8 : $('url8').val(),
-            url9 : $('url9').val(),
-            url10 : $('url10').val()
+            url1 : document.getElementById('url1').value,
+            url2 : document.getElementById('url2').value,
+            url3 : document.getElementById('url3').value,
+            url4 : document.getElementById('url4').value,
+            url5 : document.getElementById('url5').value,
+            url6 : document.getElementById('url6').value,
+            url7 : document.getElementById('url7').value,
+            url8 : document.getElementById('url8').value,
+            url9 : document.getElementById('url9').value,
+            url10 : document.getElementById('url10').value
         };
 $.ajax({
         type : 'POST',
         url : 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws',  
-        data: JSON.stringify(data),
+        data: data,
         success:function (data) {
             console.log(data);
         },
