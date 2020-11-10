@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<section class="min-h-screen relative bg-top md:bg-left bg-no-repeat bg-contain">
+    <div class="container pt-8 lg:pt-16">
+      <div class="w-full md:w-1/2 mt-8 lg:mt-16 xxl:mt-32">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
+          Amazon Price Checker 🛒
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
+          Saisissez les 10 URLs des 10 produits que vous souhaitez surveiller sur Amazon
+        </p>
+        <form role="form" data-toggle="validator">
+          <div class="form-group">
+            <input type="url" class="form-control" id="url1" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Votre URL doit commencer par https://www.amazon.fr/" required>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url2" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url3" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url4" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url5" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url6" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url7" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url8" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url9" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <input type="url" class="form-control" id="url10" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
+            <div class="help-block with-errors"></div>
+          </div>
+          <button type="submit" class="btn btn-default action-btn">Tracker ces produits</button>
+        </form>
+      </div>
+    </div> 
+</section>
+  
+<footer class="bg-navy-light min-h-screen flex flex-col">
+  <div class="py-12 lg:py-16 flex-grow banner flex items-center">
+    <div class="container md:h-full text-center">
+      <h2 class="text-pink text-2xl md:text-3xl xl:text-4xl">
+        Amazon Price Checker
+      </h2>
+      <p class="text-pink-light text-xl md:text-2xl max-w-5xl mt-4 mx-auto mb-16">
+        Relax, on garde un oeil sur vos prix 👀
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+$(function(){
+  //Bootstrap Validator
+  $('form').validator().on('validated.bs.validator', function(e){
+  var target = e.relatedTarget;
+    if (target.id == 'url1'){
+      $('#url2').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url2'){
+      $('#url3').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url3'){
+      $('#url4').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url4'){
+      $('#url5').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url5'){
+      $('#url6').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url6'){
+      $('#url7').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url7'){
+      $('#url8').prop('disabled', !target.checkValidity());
+    } else if (target.id == 'url8'){
+      $('#url9').prop('disabled', !target.checkValidity());
+    }
+  });
+});
+</script>
