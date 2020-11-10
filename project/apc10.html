@@ -11,7 +11,7 @@ layout: default
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
           Saisissez les 10 URLs des 10 produits que vous souhaitez surveiller sur Amazon
         </p>
-        <form role="form" data-toggle="validator">
+        <form role="form" method="POST" data-toggle="validator">
           <div class="form-group">
             <input type="url" class="form-control" id="url1" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Votre URL doit commencer par https://www.amazon.fr/" required>
             <div class="help-block with-errors"></div>
