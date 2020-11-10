@@ -72,7 +72,31 @@ layout: default
 </footer>
 
 <script>
-$(function(){
+var data = {
+            url1 : $('#url1').val(),
+            url2 : $('#url2').val(),
+            url3 : $('url3').val(),
+            url4 : $('url4').val(),
+            url5 : $('url5').val(),
+            url6 : $('url6').val(),
+            url7 : $('url7').val(),
+            url8 : $('url8').val(),
+            url9 : $('url9').val(),
+            url10 : $('url10').val()
+        };
+$.ajax({
+        type : 'POST',
+        url : 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws',  
+        data: JSON.stringify(data),
+        success:function (data) {
+            console.log(data);
+        },
+        error: function(xhr, status, error) {
+        // handle error
+      }
+    });   
+    
+/*$(function(){
  //Bootstrap Validator
  /*$('form').validator().on('validated.bs.validator', function(e){
    var target = e.relatedTarget;
@@ -95,25 +119,6 @@ $(function(){
       } else if (target.id == 'url9'){
         $('#url10').prop('disabled', !target.checkValidity());
       }
-  })*/
-  //Post Request to webhook
-  $.ajax({
-  type: "POST",
-  url: "https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws",
-  data: {
-    "url1" : $('url1').val(),
-    "url2" : $('url2').val(),
-    "url3" : $('url3').val(),
-    "url4" : $('url4').val(),
-    "url5" : $('url5').val(),
-    "url6" : $('url6').val(),
-    "url7" : $('url7').val(),
-    "url8" : $('url8').val(),
-    "url9" : $('url9').val(),
-    "url10" : $('url10').val()
-  },
-  success: "success",
-  dataType: "json"
-});
-});
+  })
+});*/
 </script>
