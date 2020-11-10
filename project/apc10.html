@@ -52,7 +52,7 @@ layout: default
             <input type="url" class="form-control" id="url10" placeholder="https://www.amazon.fr/dp/B084DWG2VQ/" pattern="^https:\/\/www\.amazon\.fr\/" data-error="Please provide a valid Amazon URL" required disabled>
             <div class="help-block with-errors"></div>
           </div>
-          <button type="submit" class="btn btn-default action-btn">Tracker ces produits</button>
+          <button type="submit" class="btn btn-default action-btn" onclick="sendWebhook()">Tracker ces produits</button>
         </form>
       </div>
     </div> 
@@ -95,4 +95,35 @@ $(function(){
     }
   });
 });
+    
+<script>
+function sendWebhook() {
+
+    var http = new XMLHttpRequest();
+    var url = 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws';
+    var content = {
+        "url1" : document.getElementById("url1").value,
+        "url2" : document.getElementById("url2").value,
+        "url3" : document.getElementById("url3").value,
+        "url4" : document.getElementById("url4").value,
+        "url5" : document.getElementById("url5").value,
+        "url6" : document.getElementById("url6").value,
+        "url7" : document.getElementById("url7").value,
+        "url8" : document.getElementById("url8").value,
+        "url9" : document.getElementById("url9").value,
+        "url10" : document.getElementById("url10").value
+    };
+    http.open('POST', url, true);
+
+    //Send the proper header information along with the request
+    http.setRequestHeader('Content-type', 'application/json');
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+            alert(http.responseText);
+        }
+    }
+    http.send(JSON.stringify(content));
+
+}
 </script>
