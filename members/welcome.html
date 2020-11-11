@@ -24,7 +24,7 @@ layout: default
             <th>Dernier prix relevé</th>
           </tr>
           <tr>
-            <td id="prod1" href="url1"></td>
+            <td id="prod1"></td>
             <td id="price1"></td>
           </tr>
           <tr>
@@ -78,9 +78,9 @@ window.onload = function(){
             console.log(json);
             
             var url1 = json.records[0].fields.URL;
-            document.getElementById("url1").innerHTML = url1;
+            //document.getElementById("url1").innerHTML = url1;
             var prod1 = json.records[0].fields.Product;
-            document.getElementById("prod1").innerHTML = prod1;
+            document.getElementById("prod1").innerHTML = "<a href=" + url1 + ">" + prod1 + "</a>";
             
             var url2 = json.records[1].fields.URL;
             document.getElementById("url2").innerHTML = url2;
