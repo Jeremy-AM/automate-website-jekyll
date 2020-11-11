@@ -16,9 +16,26 @@ layout: default
         </p>
         <div style="display: none" id="msID" data-ms-member="id"></div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
-            All data
+            Votre tableau de suivi
         </h1>
-        <p id="all"></p>
+        <table style="width:100%">
+          <tr>
+            <th>URL Amazon</th>
+            <th>Dernier prix relevé</th>
+          </tr>
+          <tr>
+            <td id="url1"></td>
+            <td id="price1"></td>
+          </tr>
+          <tr>
+            <td id="url2"></td>
+            <td id="price2"></td>
+          </tr>
+          <tr>
+            <td id="url3"></td>
+            <td id="price3"></td>
+          </tr>
+        </table>
       </div>
     </div> 
 </section>
@@ -29,9 +46,11 @@ window.onload = function(){
     var id = document.getElementById("msID").value;
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            var response = JSON.stringify(this.responseText);
-            document.getElementById("all").innerHTML = response;
+            console.log(this.responseText.records[1]);
+            //var response = JSON.stringify(this.responseText);
+            //document.getElementById("all").innerHTML = response;
+            
+            //var url1 = this.responseText.records[0]
         }
     };
 
