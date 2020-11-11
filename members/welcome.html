@@ -46,11 +46,13 @@ window.onload = function(){
     var id = document.getElementById("msID").value;
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText.records[1]);
+            var json = JSON.parse(this.responseText);
+            console.log(json);
             //var response = JSON.stringify(this.responseText);
             //document.getElementById("all").innerHTML = response;
             
-            //var url1 = this.responseText.records[0]
+            var url1 = json.records[0].id;
+            console.log(url1);
         }
     };
 
