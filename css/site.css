@@ -31,11 +31,6 @@ p {
   transform: translate(2px, 2px);
 }
 
-/*Added by Jérémy for APC forms*/
-.input {
-  @apply font-display font-semibold py-1 px-8 inline-block rounded-lg border-solid border-3;
-}
-
 .quote {
   @apply w-full mb-12;
 }
