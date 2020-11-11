@@ -18,7 +18,7 @@ layout: default
         <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
             All data
         </h1>
-        <p id="all"></p>
+        <p id="all" value=""></p>
       </div>
     </div> 
 </section>
@@ -30,7 +30,8 @@ window.onload = function(){
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            document.getElementById("all").value = JSON.stringify(this.responseText);
+            var response = JSON.stringify(this.responseText);
+            document.getElementById("all").setAttribute('value', response);
         }
     };
 
