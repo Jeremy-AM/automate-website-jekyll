@@ -5,8 +5,8 @@ layout: default
 <section class="min-h-screen relative bg-top md:bg-left bg-no-repeat bg-contain">
     <div class="container pt-8 lg:pt-16">
       <div class="w-full md:w-1/2 mt-8 lg:mt-16 xxl:mt-32">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4" id="userID" data-ms-member="id">
-          Bienvenue sur votre espace personnel.
+        <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
+            Bienvenue sur votre espace personnel.
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
             Personnalisez votre profil en cliquant <a href="#/ms/profile">ici</a>
@@ -14,11 +14,11 @@ layout: default
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
             Votre plan actuel est <div data-ms-member="membership.name"><div> 🎉
         </p>
-          <h3>URL#1</h3>
-          <div id="url1"></div>
-          <div id="price1"></div>
-          <h3>All data</h3>
-          <div id="all"></div>
+        <div style="display: none" id="userID" data-ms-member="id"></div>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
+            All data
+        </h1>
+        <p id="all"></p>
       </div>
     </div> 
 </section>
@@ -30,8 +30,6 @@ window.onload = function(){
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            document.getElementById("url1").value = this.responseText.records[0].fields.URL;
-            document.getElementById("price1").value = this.responseText.records[0].fields.Prix;
             document.getElementById("all").value = this.responseText;
         }
     };
