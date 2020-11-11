@@ -14,7 +14,7 @@ layout: default
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
             Votre plan actuel est <div data-ms-member="membership.name"><div> 🎉
         </p>
-        <div style="display: none" id="userID" data-ms-member="id"></div>
+        <div style="display: none" id="msID" data-ms-member="id"></div>
         <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
             All data
         </h1>
@@ -26,7 +26,7 @@ layout: default
 <script>
 window.onload = function(){
     var request = new XMLHttpRequest();
-    var id = document.getElementById("userID").value;
+    var id = document.getElementById("msID").value;
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
