@@ -78,7 +78,7 @@ window.onload = function(){
             console.log(json);
             
             var url1 = json.records[0].fields.URL;
-            document.getElementById("url1").value = url1;
+            document.getElementById("url1").innerHTML = url1;
             var prod1 = json.records[0].fields.Product;
             document.getElementById("prod1").innerHTML = prod1;
             
