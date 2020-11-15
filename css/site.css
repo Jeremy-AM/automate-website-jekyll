@@ -16,6 +16,24 @@ p {
   @apply font-body;
 }
 
+/* Add CSS attributes for table */
+
+table {
+  @apply font-body pt-4 border-t-2 border-solid border-green-light;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  font-size: 1em;
+}
+
+.col-right {
+  text-align: center;
+}
+
 @tailwind components;
 
 .pill {
