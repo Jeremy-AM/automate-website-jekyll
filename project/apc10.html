@@ -76,6 +76,61 @@ layout: default
 </footer>
 
 <script>
+window.onload = function(){
+    var request = new XMLHttpRequest();
+    var id = document.getElementById("msID").value;
+    var url1 = document.getElementById("url1").value;
+    var url2 = document.getElementById("url2").value;
+    var url3 = document.getElementById("url3").value;
+    var url4 = document.getElementById("url4").value;
+    var url5 = document.getElementById("url5").value;
+    var url6 = document.getElementById("url6").value;
+    var url7 = document.getElementById("url7").value;
+    var url8 = document.getElementById("url8").value;
+    var url9 = document.getElementById("url9").value;
+    var url10 = document.getElementById("url10").value;
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var json = JSON.parse(this.responseText);
+            console.log(json);
+            
+            var url1 = json.records[0].fields.URL;
+            document.getElementById("url1").innerHTML = '<a href=' + url1 + ' target="_blank">' + url1 + '</a>';
+            
+            var url2 = json.records[1].fields.URL;
+            document.getElementById("url2").innerHTML = '<a href=' + url2 + ' target="_blank">' + url2 + '</a>';
+            
+            var url3 = json.records[2].fields.URL;
+            document.getElementById("url3").innerHTML = '<a href=' + url3 + ' target="_blank">' + url3 + '</a>';
+            
+            var url4 = json.records[3].fields.URL;
+            document.getElementById("url4").innerHTML = '<a href=' + url4 + ' target="_blank">' + url4 + '</a>';
+            
+            var url5 = json.records[4].fields.URL;
+            document.getElementById("url5").innerHTML = '<a href=' + url5 + ' target="_blank">' + url5 + '</a>';
+            
+            var url6 = json.records[5].fields.URL;
+            document.getElementById("url6").innerHTML = '<a href=' + url6 + ' target="_blank">' + url6 + '</a>';
+            
+            var url7 = json.records[6].fields.URL;
+            document.getElementById("url7").innerHTML = '<a href=' + url7 + ' target="_blank">' + url7 + '</a>';
+            
+            var url8 = json.records[7].fields.URL;
+            document.getElementById("url8").innerHTML = '<a href=' + url8 + ' target="_blank">' + url8 + '</a>';
+            
+            var url9 = json.records[8].fields.URL;
+            document.getElementById("url9").innerHTML = '<a href=' + url9 + ' target="_blank">' + url9 + '</a>';
+            
+            var url10 = json.records[9].fields.URL;
+            document.getElementById("url10").innerHTML = '<a href=' + url10 + ' target="_blank">' + url10 + '</a>';
+        }
+    };
+
+    request.open('GET', 'https://api.airtable.com/v0/appNWCk04VryqPCTS/Amazon%20Price%20Checker?maxRecords=10&view=All%20URLs&filterByFormula=%3DAND%28%7BMemberstack%20ID%7D%3D%27' + id + '%27%2C%7BURL%20tracked%3F%7D%29');
+    request.setRequestHeader('Authorization', 'Bearer keykvY3PwUzBpmFy2');
+    request.send();
+}
+    
 $(document).ready(function() {
     $('#btn').click(function() {
         $.ajax({
