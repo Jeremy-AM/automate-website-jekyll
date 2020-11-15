@@ -16,11 +16,11 @@ p {
   @apply font-body;
 }
 
-//Style for tables added for APC
+/*Style for tables added for APC*/
 
 th {
   @apply font-body;
-  aling-text: left;
+  text-align: left;
 }
 
 td {
@@ -29,7 +29,7 @@ td {
 }
 
 .right-col {
-  align-text: center;
+  text-align: center;
 }
 
 @tailwind components;
