@@ -16,22 +16,6 @@ p {
   @apply font-body;
 }
 
-/*Style for tables added for APC*/
-
-th {
-  @apply font-body pt-4 border-t-2 border-solid border-green-light;
-  align: left;
-}
-
-td {
-  @apply font-body;
-  font-size: 1em;
-}
-
-.right-col {
-  align: center;
-}
-
 @tailwind components;
 
 .pill {
