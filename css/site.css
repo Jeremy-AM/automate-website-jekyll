@@ -24,14 +24,14 @@ table {
 
 th {
   text-align: left;
-  font-size: 0.75em;
+  font-size: 1em;
 }
 
 td {
-  font-size: 0.5em;
+  font-size: 0.8em;
 }
 
-.col-right {
+.right-col {
   text-align: center;
 }
 
