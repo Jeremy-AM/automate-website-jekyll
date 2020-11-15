@@ -78,8 +78,10 @@ layout: default
 <script>
 window.onload = function(){
     var request = new XMLHttpRequest();
+    
     var id = document.getElementById("userID").value;
-    var url1 = document.getElementById("url1").value;
+    
+    /*var url1 = document.getElementById("url1").value;
     var url2 = document.getElementById("url2").value;
     var url3 = document.getElementById("url3").value;
     var url4 = document.getElementById("url4").value;
@@ -88,41 +90,52 @@ window.onload = function(){
     var url7 = document.getElementById("url7").value;
     var url8 = document.getElementById("url8").value;
     var url9 = document.getElementById("url9").value;
-    var url10 = document.getElementById("url10").value;
+    var url10 = document.getElementById("url10").value;*/
+    
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(this.responseText);
             console.log(json);
             
-            var url1 = json.records[0].fields.URL;
-            document.getElementById("url1").innerHTML = '<a href=' + url1 + ' target="_blank">' + url1 + '</a>';
+            for (var i = 0; i < json.records.length; i++) {
+            
+            var count = i + 1;
+            var url = "url" + count;
+            var value = document.getElementById(url).value;
+            var urlResponse = json.records[i].fields.URL;
+            document.getElementById(url).value = urlResponse;
+                
+            }
+            
+            /*var url1 = json.records[0].fields.URL;
+            document.getElementById("url1").value = url1;
             
             var url2 = json.records[1].fields.URL;
-            document.getElementById("url2").innerHTML = '<a href=' + url2 + ' target="_blank">' + url2 + '</a>';
+            document.getElementById("url2").value = url2;
             
             var url3 = json.records[2].fields.URL;
-            document.getElementById("url3").innerHTML = '<a href=' + url3 + ' target="_blank">' + url3 + '</a>';
+            document.getElementById("url3").value = url3;
             
             var url4 = json.records[3].fields.URL;
-            document.getElementById("url4").innerHTML = '<a href=' + url4 + ' target="_blank">' + url4 + '</a>';
+            document.getElementById("url4").value = url4;
             
             var url5 = json.records[4].fields.URL;
-            document.getElementById("url5").innerHTML = '<a href=' + url5 + ' target="_blank">' + url5 + '</a>';
+            document.getElementById("url5").value = url5;
             
             var url6 = json.records[5].fields.URL;
-            document.getElementById("url6").innerHTML = '<a href=' + url6 + ' target="_blank">' + url6 + '</a>';
+            document.getElementById("url6").value = url6;
             
             var url7 = json.records[6].fields.URL;
-            document.getElementById("url7").innerHTML = '<a href=' + url7 + ' target="_blank">' + url7 + '</a>';
+            document.getElementById("url7").value = url7;
             
             var url8 = json.records[7].fields.URL;
-            document.getElementById("url8").innerHTML = '<a href=' + url8 + ' target="_blank">' + url8 + '</a>';
+            document.getElementById("url8").value = url8;
             
             var url9 = json.records[8].fields.URL;
-            document.getElementById("url9").innerHTML = '<a href=' + url9 + ' target="_blank">' + url9 + '</a>';
+            document.getElementById("url9").value = url9;
             
             var url10 = json.records[9].fields.URL;
-            document.getElementById("url10").innerHTML = '<a href=' + url10 + ' target="_blank">' + url10 + '</a>';
+            document.getElementById("url10").value = url10;*/
         }
     };
 
