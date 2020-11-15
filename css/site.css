@@ -16,6 +16,22 @@ p {
   @apply font-body;
 }
 
+//Style for tables added for APC
+
+th {
+  @apply font-body;
+  aling-text: left;
+}
+
+td {
+  @apply font-body;
+  font-size: 75%;
+}
+
+.right-col {
+  align-text: center;
+}
+
 @tailwind components;
 
 .pill {
