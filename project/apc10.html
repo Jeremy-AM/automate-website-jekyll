@@ -80,7 +80,8 @@ $(document).ready(function() {
     $('#btn').click(function() {
         $.ajax({
         type : 'POST',
-        url : 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws',  
+        url : 'https://hook.integromat.com/tvp4wlajq3ifo23o0knctemobpbfymws',
+        async : false,
         data: {
             url1 : $('#url1').val(),
             url2 : $('#url2').val(),
