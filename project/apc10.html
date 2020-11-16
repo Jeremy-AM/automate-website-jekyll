@@ -98,9 +98,9 @@ window.onload = function(){
             console.log(json);
             
             MemberStack.onReady.then(async function(member) {
-                var metaData = member.metaData;
-                var rec = metaData.rec;
-                console.log(rec);
+                var metaData = member.getMetaData()
+                //var rec = metaData.rec;
+                console.log(metaData);
             })
             
             for (var i = 0; i < json.records.length; i++) {
