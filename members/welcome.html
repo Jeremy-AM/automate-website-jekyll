@@ -81,8 +81,10 @@ window.onload = function(){
             console.log(json);
             
             MemberStack.onReady.then(function(member) { 
-                var rec = json.records[0].fields.Member[0];
-                member.updateMetaData(rec);
+                var metaData = {
+                    rec: json.records[0].fields.Member[0];
+                }
+                member.updateMetaData(metaData)
             })
             
             var url1 = json.records[0].fields.URL;
