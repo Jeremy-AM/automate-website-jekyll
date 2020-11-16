@@ -76,9 +76,11 @@ layout: default
 </footer>
 
 <script>
+// Declare rec as a global variable
+var rec;
+
 window.onload = function(){
     var request = new XMLHttpRequest();
-    var rec;
     var id = document.getElementById("userID").value;
     
     /*var url1 = document.getElementById("url1").value;
