@@ -84,9 +84,6 @@ window.onload = function(){
                 var metaData = {
                     rec: json.records[0].fields.Member[0], //"recRaFLxaas8XAAOR"
                 }
-                for (var i = 0; i < 17; i++) {
-                    delete metaData.i;
-                }
                 member.updateMetaData(metaData)
                 
                 async function asyncCall() {
