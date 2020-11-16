@@ -85,6 +85,8 @@ window.onload = function(){
                     rec: json.records[0].fields.Member[0], //"recRaFLxaas8XAAOR"
                 }
                 member.updateMetaData(metaData)
+                var response = await member.getMetaData()
+                console.log(response);
             })
             
             var url1 = json.records[0].fields.URL;
