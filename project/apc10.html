@@ -98,10 +98,10 @@ window.onload = function(){
             console.log(json);
             
             MemberStack.onReady.then(async function(member) {
-                var metaData = member.getMetaData()
+                var metaData = await member.getMetaData()
                 console.log(metaData);
-                var rec = member.rec;
-                console.log(rec);
+                console.log(metaData.rec);
+                console.log(member.rec);
             })
             
             for (var i = 0; i < json.records.length; i++) {
