@@ -98,8 +98,8 @@ window.onload = function(){
                 var count = i + 1;
                 var prod = "prod" + count;
                 var price = "price" + count;
-                document.getElementById(prod).innerHTML = '<a href=' + json.records[0].fields.URL + ' target="_blank">' + json.records[0].fields.Product + '</a>';
-                document.getElementById(price).innerHTML = json.records[0].fields.Prix + "€";   
+                document.getElementById(prod).innerHTML = '<a href=' + json.records[i].fields.URL + ' target="_blank">' + json.records[i].fields.Product + '</a>';
+                document.getElementById(price).innerHTML = json.records[i].fields.Prix + "€";   
             }
             
             /*
