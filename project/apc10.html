@@ -97,6 +97,12 @@ window.onload = function(){
             var json = JSON.parse(this.responseText);
             console.log(json);
             
+            MemberStack.onReady.then(async function(member) {
+                var metaData = member.metaData;
+                var rec = metaData.rec;
+                console.log(rec);
+            })
+            
             for (var i = 0; i < json.records.length; i++) {
             
             var count = i + 1;
