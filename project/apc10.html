@@ -78,7 +78,7 @@ layout: default
 <script>
 window.onload = function(){
     var request = new XMLHttpRequest();
-    
+    var rec;
     var id = document.getElementById("userID").value;
     
     /*var url1 = document.getElementById("url1").value;
@@ -100,8 +100,7 @@ window.onload = function(){
             MemberStack.onReady.then(async function(member) {
                 var metaData = await member.getMetaData()
                 console.log(metaData);
-                console.log(metaData.rec);
-                console.log(member.rec);
+                rec = metaData.rec;
             })
             
             for (var i = 0; i < json.records.length; i++) {
@@ -168,7 +167,8 @@ $(document).ready(function() {
             url8 : $('#url8').val(),
             url9 : $('#url9').val(),
             url10 : $('#url10').val(),
-            userID : $('#userID').val()
+            userID : $('#userID').val(),
+            rec : rec
         },
         success:function (data) {
             console.log(data);
