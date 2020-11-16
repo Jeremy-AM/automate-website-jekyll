@@ -6,17 +6,161 @@ layout: default
     <div class="container pt-8 lg:pt-16">
       <div class="w-full md:w-1/2 mt-8 lg:mt-16 xxl:mt-32">
         <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
-          Bienvenue sur votre espace personnel.
+            Bienvenue sur votre espace personnel.
         </h1>
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
-          Retrouvez ici tous vos services Automate Me auxquels vous avez souscrit pour vous faciliter la vie 😎
+            Personnaliser votre profil en cliquant <a href="#/ms/profile"><u>ici</u></a> 🏠
         </p>
         <p class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
-            Cliquez <a href="/project/summary">ici</a> pour accéder au contenu de votre projet 🗂
+            Votre plan actuel est <a href="/project/apc10"><u><span class="text-lg sm:text-xl md:text-2xl text-navy mt-4" data-ms-member="membership.name" href="/project/apc10"></span></u> 📝</a>
+        </p>
+        <div style="display: none" id="msID" data-ms-member="id"></div>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-navy mt-2 lg:mt-4">
+            Votre tableau de suivi
+        </h1>
+        <table class="text-lg sm:text-xl md:text-2xl text-navy mt-4">
+          <tr>
+            <th>Produit</th>
+            <th class="right-col">Prix</th>
+          </tr>
+          <tr>
+            <td id="prod1"></td>
+            <td class="right-col" id="price1"></td>
+          </tr>
+          <tr>
+            <td id="prod2"></td>
+            <td class="right-col" id="price2"></td>
+          </tr>
+          <tr>
+            <td id="prod3"></td>
+            <td class="right-col" id="price3"></td>
+          </tr>
+            <tr>
+            <td id="prod4"></td>
+            <td class="right-col" id="price4"></td>
+          </tr>
+            <tr>
+            <td id="prod5"></td>
+            <td class="right-col" id="price5"></td>
+          </tr>
+            <tr>
+            <td id="prod6"></td>
+            <td class="right-col" id="price6"></td>
+          </tr>
+            <tr>
+            <td id="prod7"></td>
+            <td class="right-col" id="price7"></td>
+          </tr>
+            <tr>
+            <td id="prod8"></td>
+            <td class="right-col" id="price8"></td>
+          </tr>
+            <tr>
+            <td id="prod9"></td>
+            <td class="right-col" id="price9"></td>
+          </tr>
+            <tr>
+            <td id="prod10"></td>
+            <td class="right-col" id="price10"></td>
+          </tr>
+        </table>
+        <p class="text-md sm:text-xl md:text-2xl text-navy mt-4">
+           <a href="#/ms/logout"><u>Déconnexion</u></a> 👋
         </p>
       </div>
     </div> 
 </section>
+    
+<script>
+window.onload = function(){
+    var request = new XMLHttpRequest();
+    var id = document.getElementById("msID").value;
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var json = JSON.parse(this.responseText);
+            console.log(json);
+            
+            MemberStack.onReady.then(function(member) { 
+                var metaData = {
+                    rec: json.records[0].fields.Member[0], //"recRaFLxaas8XAAOR"
+                }
+                member.updateMetaData(metaData)
+                
+                async function asyncCall() {
+                  console.log('calling');
+                  var response = await member.getMetaData()
+                  console.log(response);
+                }
+                asyncCall();
+            })
+            
+            var url1 = json.records[0].fields.URL;
+            var prod1 = json.records[0].fields.Product;
+            document.getElementById("prod1").innerHTML = '<a href=' + url1 + ' target="_blank">' + prod1 + '</a>';
+            var price1 = json.records[0].fields.Prix;
+            document.getElementById("price1").innerHTML = price1 + "€";
+            
+            var url2 = json.records[1].fields.URL;
+            var prod2 = json.records[1].fields.Product;
+            document.getElementById("prod2").innerHTML = '<a href=' + url2 + ' target="_blank">' + prod2 + '</a>';
+            var price2 = json.records[1].fields.Prix;
+            document.getElementById("price2").innerHTML = price2 + "€";
+            
+            var url3 = json.records[2].fields.URL;
+            var prod3 = json.records[2].fields.Product;
+            document.getElementById("prod3").innerHTML = '<a href=' + url3 + ' target="_blank">' + prod3 + '</a>';
+            var price3 = json.records[2].fields.Prix;
+            document.getElementById("price3").innerHTML = price3 + "€";
+            
+            var url4 = json.records[3].fields.URL;
+            var prod4 = json.records[3].fields.Product;
+            document.getElementById("prod4").innerHTML = '<a href=' + url4 + ' target="_blank">' + prod4 + '</a>';
+            var price4 = json.records[3].fields.Prix;
+            document.getElementById("price4").innerHTML = price4 + "€";
+            
+            var url5 = json.records[4].fields.URL;
+            var prod5 = json.records[4].fields.Product;
+            document.getElementById("prod5").innerHTML = '<a href=' + url5 + ' target="_blank">' + prod5 + '</a>';
+            var price5 = json.records[4].fields.Prix;
+            document.getElementById("price5").innerHTML = price5 + "€";
+            
+            var url6 = json.records[5].fields.URL;
+            var prod6 = json.records[5].fields.Product;
+            document.getElementById("prod6").innerHTML = '<a href=' + url6 + ' target="_blank">' + prod6 + '</a>';
+            var price6 = json.records[5].fields.Prix;
+            document.getElementById("price6").innerHTML = price6 + "€";
+            
+            var url7 = json.records[6].fields.URL;
+            var prod7 = json.records[6].fields.Product;
+            document.getElementById("prod7").innerHTML = '<a href=' + url7 + ' target="_blank">' + prod7 + '</a>';
+            var price7 = json.records[6].fields.Prix;
+            document.getElementById("price7").innerHTML = price7 + "€";
+            
+            var url8 = json.records[7].fields.URL;
+            var prod8 = json.records[7].fields.Product;
+            document.getElementById("prod8").innerHTML = '<a href=' + url8 + ' target="_blank">' + prod8 + '</a>';
+            var price8 = json.records[7].fields.Prix;
+            document.getElementById("price8").innerHTML = price8 + "€";
+            
+            var url9 = json.records[8].fields.URL;
+            var prod9 = json.records[8].fields.Product;
+            document.getElementById("prod9").innerHTML = '<a href=' + url9 + ' target="_blank">' + prod9 + '</a>';
+            var price9 = json.records[8].fields.Prix;
+            document.getElementById("price9").innerHTML = price9 + "€";
+            
+            var url10 = json.records[9].fields.URL;
+            var prod10 = json.records[9].fields.Product;
+            document.getElementById("prod10").innerHTML = '<a href=' + url10 + ' target="_blank">' + prod10 + '</a>';
+            var price10 = json.records[9].fields.Prix;
+            document.getElementById("price10").innerHTML = price10 + "€"; 
+        }
+    };
+
+    request.open('GET', 'https://api.airtable.com/v0/appNWCk04VryqPCTS/Amazon%20Price%20Checker?maxRecords=10&view=All%20URLs&filterByFormula=%7BMemberstack%20ID%7D%20%3D%20%27' + id + '%27');
+    request.setRequestHeader('Authorization', 'Bearer keykvY3PwUzBpmFy2');
+    request.send();
+}
+</script>
   
 <footer class="bg-navy-light min-h-screen flex flex-col">
   <div class="py-12 lg:py-16 flex-grow banner flex items-center">
