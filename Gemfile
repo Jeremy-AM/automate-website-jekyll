@@ -6,7 +6,7 @@ gem "jekyll", "~> 3.8.5"
 %w[
   base64 bigdecimal csv date delegate etc fcntl fiber
   forwardable io-console ipaddr logger net-http observer
-  open-uri optparse pp prime pstore resolv singleton
+  open-uri optparse pp prime pstore resolv rexml singleton
   strscan stringio uri webrick yaml zlib
 ].each do |lib|
   gem lib
